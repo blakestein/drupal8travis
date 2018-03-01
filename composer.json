@@ -47,8 +47,7 @@
         },
         "merge-plugin": {
             "require": [
-                "vendor/acquia/blt/composer.required.json",
-                "vendor/acquia/blt/composer.suggested.json"
+                "vendor/acquia/blt/composer.required.json"
             ],
             "merge-extra": true,
             "merge-extra-deep": true,

@@ -1,12 +1,12 @@
 project:
-  machine_name: www
+  machine_name: newproject
   prefix: BLT
-  human_name: 'BLTed 8'
+  human_name: 'New Project'
   profile:
-    name: lightning
+    name: standard
   local:
     protocol: http
-    hostname: 'local.${project.machine_name}.com'
+    hostname: '${project.machine_name}.docksal'
 git:
   default_branch: master
   remotes: {  }
@@ -16,19 +16,3 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
-modules:
-  local:
-    enable: [dblog, devel, seckit, views_ui]
-    uninstall: [acsf, acquia_connector, shield]
-  ci:
-    enable: {  }
-    uninstall: [acquia_connector, shield]
-  dev:
-    enable: [acquia_connector, shield]
-    uninstall: {  }
-  test:
-    enable: [acquia_connector, shield]
-    uninstall: [devel, views_ui]
-  prod:
-    enable: [acquia_connector, shield]
-    uninstall: [devel, views_ui]
