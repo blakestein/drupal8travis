@@ -12,7 +12,7 @@ git:
   remotes: {  }
 drush:
   aliases:
-    remote: '${project.machine_name}.test'
+    remote: 'blaketestsync.dev'
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'

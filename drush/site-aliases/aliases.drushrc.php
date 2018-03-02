@@ -343,13 +343,13 @@
 #       'site-specific-alias' => '!mycommand',
 #     ),
 #  );
-#$aliases['dev'] = array(
-#    'uri' => 'http://dev.example.com',
-#    'root' => '/path/to/drupal/root',
-#    'variables' => array(
-#      'mail_system' => array('default-system' => 'DevelMailLog'),
-#    ),
-#  );
+$aliases['dev'] = array(
+  'uri' => 'http://dev.example.com',
+  'root' => '/var/www/docroot',
+  'variables' => array(
+    'mail_system' => array('default-system' => 'DevelMailLog'),
+  ),
+);
 #$aliases['server'] = array(
 #    'remote-host' => 'mystagingserver.myisp.com',
 #    'remote-user' => 'publisher',
