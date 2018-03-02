@@ -1,5 +1,5 @@
 # Note that the example .travis.yml file for child projects lives in /install.
-sudo: false
+sudo: true
 language: php
 dist: trusty
 
@@ -33,7 +33,7 @@ cache:
 
 addons:
   ssh_known_hosts:
-  # - svn-4786.devcloud.hosting.acquia.com
+    - svn-4140.devcloud.hosting.acquia.com
   chrome: stable
 
 # @see https://docs.travis-ci.com/user/notifications

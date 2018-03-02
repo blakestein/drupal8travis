@@ -9,7 +9,8 @@ project:
     hostname: '${project.machine_name}.docksal'
 git:
   default_branch: master
-  remotes: {  }
+  remotes:
+    - blaketestsync@svn-4140.devcloud.hosting.acquia.com:blaketestsync.git
 drush:
   aliases:
     remote: 'blaketestsync.dev'
