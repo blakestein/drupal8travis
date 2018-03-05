@@ -7,4 +7,4 @@
 tests.run-server: false
 disable-targets:
   tests:
-    behat: false
+    behat: true
