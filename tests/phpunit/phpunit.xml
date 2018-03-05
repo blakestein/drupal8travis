@@ -1,6 +1,15 @@
 <phpunit
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.6/phpunit.xsd"
-  bootstrap="../../vendor/autoload.php">
-
+  bootstrap="../../docroot/core/tests/bootstrap.php">
+    <testsuites>
+        <testsuite name="slalom">
+            <directory>../../docroot/modules/custom</directory>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <include>
+            <group>slalom</group>
+        </include>
+    </groups>
 </phpunit>

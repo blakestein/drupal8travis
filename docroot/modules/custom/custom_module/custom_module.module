@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * custom_module.module
+ */
+
+use Drupal\Core\Database\Query\AlterableInterface;
+
+/**
+ * Implements hook_query_alter().
+ */
+function custom_module_query_alter(AlterableInterface $query) {
+  if ($query->hasTag('two_terms')) {
+    $view = views_get_current_view();
+    if ($view->exposed_data['tid'] === $view->exposed_data['tid_1']) {
+      $query->join('node__field_tags', 'field_1', 'field_1.entity_id = node_field_data.nid AND field_1.field_tags_target_id = taxonomy_index_value_0.tid');
+      $query->join('node__field_tag_2', 'field_2', 'field_2.entity_id = node_field_data.nid AND field_2.field_tag_2_target_id = taxonomy_index_value_0.tid');
+    }
+  }
+}
+
+use Drupal\field\FieldStorageConfigInterface;
+
+/**
+ * Implements hook_field_views_data_alter().
+ */
+function custom_module_field_views_data_alter(array &$data, FieldStorageConfigInterface $field_storage) {
+  foreach ($data as $table_name => $table_data) {
+    foreach ($table_data as $field_name => $field_data) {
+      if (isset($field_data['filter']) && $field_name === 'field_int_list_value') {
+        $data[$table_name][$field_name]['filter']['id'] = 'numeric';
+      }
+    }
+  }
+}

@@ -17,3 +17,7 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
+phpunit:
+  -
+    config: ${docroot}/core/phpunit.xml.dist
+    path: ${docroot}/modules/custom
