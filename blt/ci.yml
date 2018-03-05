@@ -4,4 +4,7 @@
 #   import - Imports a .sql file from setup.dump-file.
 # setup.strategy: import
 # setup.dump-file: /tmp/my-dump-file.sql
-behat: false
+tests.run-server: false
+disable-targets:
+  test:
+    behat: false
